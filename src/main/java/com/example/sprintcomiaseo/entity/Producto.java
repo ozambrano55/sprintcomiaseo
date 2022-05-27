@@ -1,7 +1,17 @@
 package com.example.sprintcomiaseo.entity;
 
+<<<<<<< HEAD
 import javax.persistence.*;
 
+=======
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+@Getter
+@Setter
+>>>>>>> Initial commit 1/08/2022 1:13
 @Entity
 public class Producto {
     @Id
