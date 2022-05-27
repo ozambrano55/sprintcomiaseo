@@ -1,0 +1,46 @@
+Manifest-Version: 1.0
+Main-Class: com.example.sprintcomiaseo.SprintcomiaseoApplication
+Class-Path: spring-beans-5.2.5.RELEASE.jar springfox-swagger2-2.9.2.jar 
+ spring-boot-starter-data-jpa-2.2.6.RELEASE.jar logback-classic-1.2.3.ja
+ r stax-ex-1.8.1.jar jakarta.persistence-api-2.2.3.jar spring-tx-5.2.5.R
+ ELEASE.jar spring-boot-starter-2.2.6.RELEASE.jar spring-context-5.2.5.R
+ ELEASE.jar tomcat-embed-core-9.0.33.jar jakarta.annotation-api-1.3.5.ja
+ r spring-data-commons-2.2.6.RELEASE.jar spring-boot-starter-json-2.2.6.
+ RELEASE.jar txw2-2.3.2.jar antlr-2.7.7.jar javax.inject-1.jar spring-bo
+ ot-starter-validation-2.2.6.RELEASE.jar spring-data-jpa-2.2.6.RELEASE.j
+ ar spring-web-5.2.5.RELEASE.jar dom4j-2.1.1.jar hibernate-core-5.4.12.F
+ inal.jar spring-plugin-core-1.2.0.RELEASE.jar spring-boot-starter-web-2
+ .2.6.RELEASE.jar castor-xml-1.4.1.jar commons-logging-1.1.1.jar jboss-l
+ ogging-3.4.1.Final.jar classmate-1.5.1.jar istack-commons-runtime-3.0.8
+ .jar jcommon-1.0.23.jar guava-20.0.jar spring-boot-starter-logging-2.2.
+ 6.RELEASE.jar springfox-spi-2.9.2.jar jaxb-runtime-2.3.2.jar jandex-2.1
+ .1.Final.jar jul-to-slf4j-1.7.30.jar springfox-schema-2.9.2.jar spring-
+ jcl-5.2.5.RELEASE.jar spring-websocket-5.2.5.RELEASE.jar springfox-spri
+ ng-web-2.9.2.jar spring-boot-starter-websocket-2.2.6.RELEASE.jar hibern
+ ate-commons-annotations-5.1.0.Final.jar spring-expression-5.2.5.RELEASE
+ .jar jasperreports-fonts-6.18.1.jar springfox-swagger-ui-2.9.2.jar hibe
+ rnate-validator-6.0.18.Final.jar spring-plugin-metadata-1.2.0.RELEASE.j
+ ar spring-boot-starter-jdbc-2.2.6.RELEASE.jar mssql-jdbc-7.4.1.jre8.jar
+  commons-digester-2.1.jar commons-collections4-4.2.jar spring-boot-star
+ ter-aop-2.2.6.RELEASE.jar slf4j-api-1.7.30.jar jakarta.activation-api-1
+ .2.2.jar spring-aspects-5.2.5.RELEASE.jar log4j-to-slf4j-2.12.1.jar log
+ 4j-api-2.12.1.jar mapstruct-1.2.0.Final.jar ecj-3.21.0.jar jackson-data
+ type-jdk8-2.10.3.jar itext-2.1.7.js9.jar byte-buddy-1.10.8.jar jfreecha
+ rt-1.0.19.jar aspectjweaver-1.9.5.jar jakarta.validation-api-2.0.2.jar 
+ HikariCP-3.4.2.jar logback-core-1.2.3.jar jakarta.transaction-api-1.3.3
+ .jar tomcat-embed-websocket-9.0.33.jar bcprov-jdk15on-1.68.jar commons-
+ lang3-3.9.jar spring-boot-autoconfigure-2.2.6.RELEASE.jar spring-core-5
+ .2.5.RELEASE.jar swagger-annotations-1.5.20.jar jackson-datatype-jsr310
+ -2.10.3.jar springfox-swagger-common-2.9.2.jar lombok-1.18.12.jar sprin
+ g-webmvc-5.2.5.RELEASE.jar spring-boot-starter-tomcat-2.2.6.RELEASE.jar
+  spring-orm-5.2.5.RELEASE.jar jakarta.xml.bind-api-2.3.3.jar jackson-co
+ re-2.10.3.jar commons-collections-3.2.2.jar commons-beanutils-1.9.4.jar
+  swagger-models-1.5.20.jar FastInfoset-1.2.16.jar springfox-core-2.9.2.
+ jar jackson-module-parameter-names-2.10.3.jar tomcat-embed-el-9.0.33.ja
+ r javassist-3.24.0-GA.jar spring-boot-configuration-processor-2.2.6.REL
+ EASE.jar spring-messaging-5.2.5.RELEASE.jar spring-aop-5.2.5.RELEASE.ja
+ r jackson-databind-2.10.3.jar jackson-annotations-2.10.3.jar spring-jdb
+ c-5.2.5.RELEASE.jar spring-boot-devtools-2.2.6.RELEASE.jar spring-boot-
+ 2.2.6.RELEASE.jar snakeyaml-1.25.jar castor-core-1.4.1.jar jasperreport
+ s-6.18.1.jar
+
