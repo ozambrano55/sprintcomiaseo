@@ -1,6 +1,6 @@
 package com.example.sprintcomiaseo.service;
 
-import com.example.sprintcomiaseo.entity.Pedido;
+import com.example.sprintcomiaseo.entity.FacPedidosEnca;
 import com.example.sprintcomiaseo.repository.DetallePedidoRepository;
 import com.example.sprintcomiaseo.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ public class PedidoService {
     DetallePedidoRepository detallePedidoRepository;
 
     @GetMapping(path = "/buscar")
-    public List<Pedido> buscar(){
+    public List<FacPedidosEnca> buscar(){
     return pedidoRepository.findAll();
     }
 }
