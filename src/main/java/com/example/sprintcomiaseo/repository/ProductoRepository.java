@@ -7,12 +7,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 public interface ProductoRepository extends CrudRepository<Producto, Integer> {
-    @Query("SELECT P FROM Producto P WHERE P.recomendado IS 1")
+    @Query(value="SELECT TOP 10 * FROM Pro_Prod_Terminados",nativeQuery = true)
     Iterable<Producto> listarProductosRecomendados();
 
-    @Query("SELECT P FROM Producto P WHERE P.categoria.id=:idC")
+    @Query(value="SELECT  * FROM Pro_Prod_Terminados WHERE C_Producto_Terminado=: idC", nativeQuery = true)
     Iterable<Producto> listarProductosPorCategoria(int idC);
 
+    /*
     @Modifying
     @Query("UPDATE Producto P SET P.stock=stock-:cant WHERE P.id=:id")
     void descontarStock(int cant, int id);
@@ -20,4 +21,6 @@ public interface ProductoRepository extends CrudRepository<Producto, Integer> {
     @Modifying
     @Query("UPDATE Producto P SET P.stock=stock+:cant WHERE P.id=:id")
     void aumentarStock(int cant, int id);
+
+     */
 }

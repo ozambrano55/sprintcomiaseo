@@ -2,6 +2,7 @@ package com.example.sprintcomiaseo.service;
 
 import com.example.sprintcomiaseo.repository.ProductoRepository;
 import com.example.sprintcomiaseo.utils.GenericResponse;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -10,6 +11,7 @@ import static com.example.sprintcomiaseo.utils.Global.*;
 
 @Service
 @Transactional
+@Component
 public class ProductoService {
     private final ProductoRepository repository;
 

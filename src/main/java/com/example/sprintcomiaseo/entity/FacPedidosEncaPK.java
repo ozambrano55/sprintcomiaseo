@@ -8,20 +8,20 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class FacPedidosEncaPK implements Serializable {
-    @Column(name = "C_Empresa")
+    @Column(name = "C_Empresa", nullable = false)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int cEmpresa;
-    @Column(name = "N_Orden_Pedido")
+    private Integer cEmpresa;
+    @Column(name = "N_Orden_Pedido", nullable = false, length = 15)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String nOrdenPedido;
 
-    public int getcEmpresa() {
+    public Integer getcEmpresa() {
         return cEmpresa;
     }
 
-    public void setcEmpresa(int cEmpresa) {
+    public void setcEmpresa(Integer cEmpresa) {
         this.cEmpresa = cEmpresa;
     }
 
@@ -38,7 +38,7 @@ public class FacPedidosEncaPK implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         FacPedidosEncaPK that = (FacPedidosEncaPK) o;
-        return cEmpresa == that.cEmpresa && Objects.equals(nOrdenPedido, that.nOrdenPedido);
+        return Objects.equals(cEmpresa, that.cEmpresa) && Objects.equals(nOrdenPedido, that.nOrdenPedido);
     }
 
     @Override

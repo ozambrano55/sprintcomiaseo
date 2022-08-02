@@ -28,7 +28,7 @@ public class Producto {
     @Column(length = 500)
     private String descripcionPlatillo;
     @OneToOne
-    private Categoria categoria;
+    private InvSubgrupos categoria;
     @Column
     private boolean vigencia;
     @Column
@@ -82,11 +82,11 @@ public class Producto {
         this.descripcionPlatillo = descripcionPlatillo;
     }
 
-    public Categoria getCategoria() {
+    public InvSubgrupos getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(Categoria categoria) {
+    public void setCategoria(InvSubgrupos categoria) {
         this.categoria = categoria;
     }
 
