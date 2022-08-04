@@ -3,15 +3,14 @@ package com.example.sprintcomiaseo.entity;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.data.jpa.repository.Query;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
+@Table
 public class Categoria {
     @Id
     @Column(name = "C_Grupo")
@@ -19,6 +18,10 @@ public class Categoria {
 
     @Column(name = "Grupo")
     private String grupo;
+
+    @OneToMany(mappedBy = "categoria")
+    private List<Producto> productoList;
+
 
     @Column(name = "Image")
     private String image;

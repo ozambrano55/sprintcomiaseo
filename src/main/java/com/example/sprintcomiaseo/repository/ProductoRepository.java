@@ -2,15 +2,14 @@ package com.example.sprintcomiaseo.repository;
 
 
 import com.example.sprintcomiaseo.entity.Producto;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-public interface ProductoRepository extends CrudRepository<Producto, Integer> {
-    @Query(value="SELECT TOP 10 * FROM Pro_Prod_Terminados",nativeQuery = true)
+public interface ProductoRepository extends CrudRepository<Producto, String> {
+    @Query(value="SELECT P FROM Producto P")
     Iterable<Producto> listarProductosRecomendados();
 
-    @Query(value="SELECT  * FROM Pro_Prod_Terminados WHERE c_subgrupo =: idC", nativeQuery = true)
+    @Query(value="SELECT  P FROM Producto P WHERE P.categoria =:idC ")
     Iterable<Producto> listarProductosPorCategoria(String idC);
 
     /*
