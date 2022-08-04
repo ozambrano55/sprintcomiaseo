@@ -26,7 +26,7 @@ public class ProductoController {
         return this.service.listarProductosRecomendados();
     }
     @GetMapping("/{idC}")
-    public GenericResponse listarProductosPorCategoria(@PathVariable int idC){
+    public GenericResponse listarProductosPorCategoria(@PathVariable String idC){
         return this.service.listarProductosPorCategoria(idC);
     }
 }

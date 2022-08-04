@@ -21,7 +21,7 @@ public class ProductoService {
     public GenericResponse listarProductosRecomendados(){
         return new GenericResponse(TIPO_DATA, RPTA_OK, OPERACION_CORRECTA, this.repository.listarProductosRecomendados());
     }
-    public GenericResponse listarProductosPorCategoria(int idC){
+    public GenericResponse listarProductosPorCategoria(String idC){
         return new GenericResponse(TIPO_DATA, RPTA_OK, OPERACION_CORRECTA, this.repository.listarProductosPorCategoria(idC));
     }
 }

@@ -10,10 +10,10 @@ import org.springframework.stereotype.Repository;
 import java.io.Serializable;
 import java.util.Optional;
 
-public interface PedidoRepository extends CrudRepository<FacPedidosEnca, Integer> {
+public interface PedidoRepository extends CrudRepository<FacPedidosEnca, String> {
     @Query("SELECT P FROM FacPedidosEnca P WHERE P.cCodCliente=:idCli")
     Iterable<FacPedidosEnca> devolverMisCompras(String idCli);
-    @Query("SELECT P FROM FacPedidosEnca P WHERE P.nOrdenPedidoS=:idOrden AND P.cCodCliente=:idCli")
+    @Query("SELECT P FROM FacPedidosEnca P WHERE P.nOrdenPedido=:idOrden AND P.cCodCliente=:idCli")
     Optional<FacPedidosEnca> findByIdAndClienteId(String idCli, String idOrden);
 }
 

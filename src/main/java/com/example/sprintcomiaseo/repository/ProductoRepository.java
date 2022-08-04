@@ -10,8 +10,8 @@ public interface ProductoRepository extends CrudRepository<Producto, Integer> {
     @Query(value="SELECT TOP 10 * FROM Pro_Prod_Terminados",nativeQuery = true)
     Iterable<Producto> listarProductosRecomendados();
 
-    @Query(value="SELECT  * FROM Pro_Prod_Terminados WHERE C_Producto_Terminado=: idC", nativeQuery = true)
-    Iterable<Producto> listarProductosPorCategoria(int idC);
+    @Query(value="SELECT  * FROM Pro_Prod_Terminados WHERE c_subgrupo =: idC", nativeQuery = true)
+    Iterable<Producto> listarProductosPorCategoria(String idC);
 
     /*
     @Modifying

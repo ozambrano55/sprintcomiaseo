@@ -23,6 +23,7 @@ public class PedidoController {
     public GenericResponse<List<PedidoConDetallesDTO>> devolverMisComprasConDetalle(@PathVariable String idCli){
         return this.service.devolverMisCompras(idCli);
     }
+
 /*
     //GUARDAR PEDIDO
     @PostMapping

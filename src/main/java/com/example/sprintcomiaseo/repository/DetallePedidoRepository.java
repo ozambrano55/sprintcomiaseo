@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.io.Serializable;
 
 
-public interface DetallePedidoRepository extends CrudRepository<FacPedidosDeta, Integer> {
+public interface DetallePedidoRepository extends CrudRepository<FacPedidosDeta, String> {
     @Query(value = "SELECT DP FROM FacPedidosDeta DP WHERE DP.nOrdenPedido=:idP" )
     Iterable<FacPedidosDeta> findByPedido(String idP);
     @Query(value = "SELECT sum(DP.vlr_Total) AS Total FROM Fac_Pedidos_Deta dp inner JOIN Fac_Pedidos_Enca p \n"

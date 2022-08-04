@@ -1,56 +1,44 @@
 package com.example.sprintcomiaseo.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
-
+@Getter
+@Setter
 @Entity
 //@Table(name = "Fac_Pedidos_Enca", schema = "dbo", catalog = "siinf_casalindap_ec")
 //@IdClass(FacPedidosEncaPK.class)
 @Table(name = "Fac_Pedidos_Enca")
-public class FacPedidosEnca implements Serializable {
-
+public class FacPedidosEnca {
 
     @Column(name = "C_Empresa", nullable = false)
     private Integer cEmpresa;
-
-    public String getnOrdenPedidoS() {
-        return nOrdenPedidoS;
-    }
-
-    public void setnOrdenPedidoS(String nOrdenPedidoS) {
-        this.nOrdenPedidoS = nOrdenPedidoS;
-    }
-
-    public List<FacPedidosDeta> getFacPedidosDetaList() {
-        return facPedidosDetaList;
-    }
-
-    public void setFacPedidosDetaList(List<FacPedidosDeta> facPedidosDetaList) {
-        this.facPedidosDetaList = facPedidosDetaList;
-    }
-
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "N_Orden_Pedido", nullable = false, length = 15)
-    private String nOrdenPedidoS;
-
+    private String nOrdenPedido;
     @OneToMany(mappedBy = "nOrdenPedido")
     private List<FacPedidosDeta> facPedidosDetaList;
-
     @Basic
     @Column(name = "N_Orden_Cotiza", nullable = true, length = 10)
     private String nOrdenCotiza;
     @Basic
+    @JsonFormat(pattern = "dd-MM-yyyy", timezone = "America/Lima")
     @Column(name = "F_Orden", nullable = false)
     private Date fOrden;
     @Basic
+    @JsonFormat(pattern = "dd-MM-yyyy", timezone = "America/Lima")
     @Column(name = "F_Recep_Espe", nullable = false)
     private Date fRecepEspe;
     @Basic
+    @JsonFormat(pattern = "dd-MM-yyyy", timezone = "America/Lima")
     @Column(name = "F_Recep_Real", nullable = true)
     private Date fRecepReal;
     @Basic
@@ -96,9 +84,11 @@ public class FacPedidosEnca implements Serializable {
     @Column(name = "V_Dias_Saldo", nullable = false)
     private Short vDiasSaldo;
     @Basic
+    @JsonFormat(pattern = "dd-MM-yyyy", timezone = "America/Lima")
     @Column(name = "F_Pago_Anticipo_Prog", nullable = false)
     private Date fPagoAnticipoProg;
     @Basic
+    @JsonFormat(pattern = "dd-MM-yyyy", timezone = "America/Lima")
     @Column(name = "F_Pago_Saldo_Prog", nullable = false)
     private Date fPagoSaldoProg;
     @Basic
@@ -123,6 +113,7 @@ public class FacPedidosEnca implements Serializable {
     @Column(name = "V_Manipulacion", nullable = false, precision = 0)
     private Double vManipulacion;
     @Basic
+    @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss", timezone = "America/Lima")
     @Column(name = "F_Grabacion", nullable = false)
     private Date fGrabacion;
     @Basic
@@ -222,501 +213,6 @@ public class FacPedidosEnca implements Serializable {
     @Column(name = "C_Cod_Transporta", nullable = false, length = 20)
     private String cCodTransporta;
 
-    public Integer getcEmpresa() {
-        return cEmpresa;
-    }
-
-    public void setcEmpresa(Integer cEmpresa) {
-        this.cEmpresa = cEmpresa;
-    }
-
-    public String getnOrdenPedido() {
-        return nOrdenPedidoS;
-    }
-
-    public void setnOrdenPedido(String nOrdenPedido) {
-        this.nOrdenPedidoS = nOrdenPedido;
-    }
-
-    public String getnOrdenCotiza() {
-        return nOrdenCotiza;
-    }
-
-    public void setnOrdenCotiza(String nOrdenCotiza) {
-        this.nOrdenCotiza = nOrdenCotiza;
-    }
-
-    public Date getfOrden() {
-        return fOrden;
-    }
-
-    public void setfOrden(Date fOrden) {
-        this.fOrden = fOrden;
-    }
-
-    public Date getfRecepEspe() {
-        return fRecepEspe;
-    }
-
-    public void setfRecepEspe(Date fRecepEspe) {
-        this.fRecepEspe = fRecepEspe;
-    }
-
-    public Date getfRecepReal() {
-        return fRecepReal;
-    }
-
-    public void setfRecepReal(Date fRecepReal) {
-        this.fRecepReal = fRecepReal;
-    }
-
-    public String getcTipoTercero() {
-        return cTipoTercero;
-    }
-
-    public void setcTipoTercero(String cTipoTercero) {
-        this.cTipoTercero = cTipoTercero;
-    }
-
-    public String getcCodCliente() {
-        return cCodCliente;
-    }
-
-    public void setcCodCliente(String cCodCliente) {
-        this.cCodCliente = cCodCliente;
-    }
-
-    public String getpDireccionCliente() {
-        return pDireccionCliente;
-    }
-
-    public void setpDireccionCliente(String pDireccionCliente) {
-        this.pDireccionCliente = pDireccionCliente;
-    }
-
-    public String getpCCiudad() {
-        return pCCiudad;
-    }
-
-    public void setpCCiudad(String pCCiudad) {
-        this.pCCiudad = pCCiudad;
-    }
-
-    public String getpCodPostal() {
-        return pCodPostal;
-    }
-
-    public void setpCodPostal(String pCodPostal) {
-        this.pCodPostal = pCodPostal;
-    }
-
-    public String getpTel1() {
-        return pTel1;
-    }
-
-    public void setpTel1(String pTel1) {
-        this.pTel1 = pTel1;
-    }
-
-    public String getpFax() {
-        return pFax;
-    }
-
-    public void setpFax(String pFax) {
-        this.pFax = pFax;
-    }
-
-    public String getrDireccion() {
-        return rDireccion;
-    }
-
-    public void setrDireccion(String rDireccion) {
-        this.rDireccion = rDireccion;
-    }
-
-    public String getrCCiudad() {
-        return rCCiudad;
-    }
-
-    public void setrCCiudad(String rCCiudad) {
-        this.rCCiudad = rCCiudad;
-    }
-
-    public String getrCodPostal() {
-        return rCodPostal;
-    }
-
-    public void setrCodPostal(String rCodPostal) {
-        this.rCodPostal = rCodPostal;
-    }
-
-    public String getrTel1() {
-        return rTel1;
-    }
-
-    public void setrTel1(String rTel1) {
-        this.rTel1 = rTel1;
-    }
-
-    public String getrFax() {
-        return rFax;
-    }
-
-    public void setrFax(String rFax) {
-        this.rFax = rFax;
-    }
-
-    public Double getvPorAnticipo() {
-        return vPorAnticipo;
-    }
-
-    public void setvPorAnticipo(Double vPorAnticipo) {
-        this.vPorAnticipo = vPorAnticipo;
-    }
-
-    public Short getvDiasSaldo() {
-        return vDiasSaldo;
-    }
-
-    public void setvDiasSaldo(Short vDiasSaldo) {
-        this.vDiasSaldo = vDiasSaldo;
-    }
-
-    public Date getfPagoAnticipoProg() {
-        return fPagoAnticipoProg;
-    }
-
-    public void setfPagoAnticipoProg(Date fPagoAnticipoProg) {
-        this.fPagoAnticipoProg = fPagoAnticipoProg;
-    }
-
-    public Date getfPagoSaldoProg() {
-        return fPagoSaldoProg;
-    }
-
-    public void setfPagoSaldoProg(Date fPagoSaldoProg) {
-        this.fPagoSaldoProg = fPagoSaldoProg;
-    }
-
-    public String getnComentario() {
-        return nComentario;
-    }
-
-    public void setnComentario(String nComentario) {
-        this.nComentario = nComentario;
-    }
-
-    public String getcFuncionario() {
-        return cFuncionario;
-    }
-
-    public void setcFuncionario(String cFuncionario) {
-        this.cFuncionario = cFuncionario;
-    }
-
-    public Boolean getEstadoOrden() {
-        return estadoOrden;
-    }
-
-    public void setEstadoOrden(Boolean estadoOrden) {
-        this.estadoOrden = estadoOrden;
-    }
-
-    public Integer getEstadoProceso() {
-        return estadoProceso;
-    }
-
-    public void setEstadoProceso(Integer estadoProceso) {
-        this.estadoProceso = estadoProceso;
-    }
-
-    public Double getvPorDescuentoPie() {
-        return vPorDescuentoPie;
-    }
-
-    public void setvPorDescuentoPie(Double vPorDescuentoPie) {
-        this.vPorDescuentoPie = vPorDescuentoPie;
-    }
-
-    public Double getvFletes() {
-        return vFletes;
-    }
-
-    public void setvFletes(Double vFletes) {
-        this.vFletes = vFletes;
-    }
-
-    public Double getvManipulacion() {
-        return vManipulacion;
-    }
-
-    public void setvManipulacion(Double vManipulacion) {
-        this.vManipulacion = vManipulacion;
-    }
-
-    public Date getfGrabacion() {
-        return fGrabacion;
-    }
-
-    public void setfGrabacion(Date fGrabacion) {
-        this.fGrabacion = fGrabacion;
-    }
-
-    public String getcPuntoVenta() {
-        return cPuntoVenta;
-    }
-
-    public void setcPuntoVenta(String cPuntoVenta) {
-        this.cPuntoVenta = cPuntoVenta;
-    }
-
-    public String getcVendedor() {
-        return cVendedor;
-    }
-
-    public void setcVendedor(String cVendedor) {
-        this.cVendedor = cVendedor;
-    }
-
-    public String getcDirector() {
-        return cDirector;
-    }
-
-    public void setcDirector(String cDirector) {
-        this.cDirector = cDirector;
-    }
-
-    public String getcZonaFac() {
-        return cZonaFac;
-    }
-
-    public void setcZonaFac(String cZonaFac) {
-        this.cZonaFac = cZonaFac;
-    }
-
-    public String getcListaPrecios() {
-        return cListaPrecios;
-    }
-
-    public void setcListaPrecios(String cListaPrecios) {
-        this.cListaPrecios = cListaPrecios;
-    }
-
-    public String getcCondicionPago() {
-        return cCondicionPago;
-    }
-
-    public void setcCondicionPago(String cCondicionPago) {
-        this.cCondicionPago = cCondicionPago;
-    }
-
-    public String getcTipoFactura() {
-        return cTipoFactura;
-    }
-
-    public void setcTipoFactura(String cTipoFactura) {
-        this.cTipoFactura = cTipoFactura;
-    }
-
-    public String getcDctoFinanciero() {
-        return cDctoFinanciero;
-    }
-
-    public void setcDctoFinanciero(String cDctoFinanciero) {
-        this.cDctoFinanciero = cDctoFinanciero;
-    }
-
-    public String gettConRtf() {
-        return tConRtf;
-    }
-
-    public void settConRtf(String tConRtf) {
-        this.tConRtf = tConRtf;
-    }
-
-    public Short getcConRtf() {
-        return cConRtf;
-    }
-
-    public void setcConRtf(Short cConRtf) {
-        this.cConRtf = cConRtf;
-    }
-
-    public String gettConIca() {
-        return tConIca;
-    }
-
-    public void settConIca(String tConIca) {
-        this.tConIca = tConIca;
-    }
-
-    public Short getcConIca() {
-        return cConIca;
-    }
-
-    public void setcConIca(Short cConIca) {
-        this.cConIca = cConIca;
-    }
-
-    public String getcCampana() {
-        return cCampana;
-    }
-
-    public void setcCampana(String cCampana) {
-        this.cCampana = cCampana;
-    }
-
-    public String getcLider() {
-        return cLider;
-    }
-
-    public void setcLider(String cLider) {
-        this.cLider = cLider;
-    }
-
-    public String getcTipoPago() {
-        return cTipoPago;
-    }
-
-    public void setcTipoPago(String cTipoPago) {
-        this.cTipoPago = cTipoPago;
-    }
-
-    public String getEstadoImpresion() {
-        return estadoImpresion;
-    }
-
-    public void setEstadoImpresion(String estadoImpresion) {
-        this.estadoImpresion = estadoImpresion;
-    }
-
-    public String getcFunPik() {
-        return cFunPik;
-    }
-
-    public void setcFunPik(String cFunPik) {
-        this.cFunPik = cFunPik;
-    }
-
-    public String getEstadoReserva() {
-        return estadoReserva;
-    }
-
-    public void setEstadoReserva(String estadoReserva) {
-        this.estadoReserva = estadoReserva;
-    }
-
-    public String getAprobadoFactu() {
-        return aprobadoFactu;
-    }
-
-    public void setAprobadoFactu(String aprobadoFactu) {
-        this.aprobadoFactu = aprobadoFactu;
-    }
-
-    public Integer getcCatPedido() {
-        return cCatPedido;
-    }
-
-    public void setcCatPedido(Integer cCatPedido) {
-        this.cCatPedido = cCatPedido;
-    }
-
-    public String getEstadoFactu() {
-        return estadoFactu;
-    }
-
-    public void setEstadoFactu(String estadoFactu) {
-        this.estadoFactu = estadoFactu;
-    }
-
-    public String getTipoPed() {
-        return tipoPed;
-    }
-
-    public void setTipoPed(String tipoPed) {
-        this.tipoPed = tipoPed;
-    }
-
-    public String getDatoRef1() {
-        return datoRef1;
-    }
-
-    public void setDatoRef1(String datoRef1) {
-        this.datoRef1 = datoRef1;
-    }
-
-    public String getcTipoEnvio() {
-        return cTipoEnvio;
-    }
-
-    public void setcTipoEnvio(String cTipoEnvio) {
-        this.cTipoEnvio = cTipoEnvio;
-    }
-
-    public String getcCodMedioTrans() {
-        return cCodMedioTrans;
-    }
-
-    public void setcCodMedioTrans(String cCodMedioTrans) {
-        this.cCodMedioTrans = cCodMedioTrans;
-    }
-
-    public String getPremio3() {
-        return premio3;
-    }
-
-    public void setPremio3(String premio3) {
-        this.premio3 = premio3;
-    }
-
-    public String getPremio5() {
-        return premio5;
-    }
-
-    public void setPremio5(String premio5) {
-        this.premio5 = premio5;
-    }
-
-    public String getEstadoModifica() {
-        return estadoModifica;
-    }
-
-    public void setEstadoModifica(String estadoModifica) {
-        this.estadoModifica = estadoModifica;
-    }
-
-    public String getcPuntoAt() {
-        return cPuntoAt;
-    }
-
-    public void setcPuntoAt(String cPuntoAt) {
-        this.cPuntoAt = cPuntoAt;
-    }
-
-    public String getEstadoBanco() {
-        return estadoBanco;
-    }
-
-    public void setEstadoBanco(String estadoBanco) {
-        this.estadoBanco = estadoBanco;
-    }
-
-    public String getEstadoPagado() {
-        return estadoPagado;
-    }
-
-    public void setEstadoPagado(String estadoPagado) {
-        this.estadoPagado = estadoPagado;
-    }
-
-    public String getcCodTransporta() {
-        return cCodTransporta;
-    }
-
-    public void setcCodTransporta(String cCodTransporta) {
-        this.cCodTransporta = cCodTransporta;
-    }
 /*
     @Override
     public boolean equals(Object o) {

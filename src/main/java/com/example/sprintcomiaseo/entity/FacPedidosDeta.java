@@ -6,21 +6,21 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 import java.util.Objects;
 @Getter
 @Setter
 @Entity
-//@Table(name = "Fac_Pedidos_Deta", schema = "dbo", catalog = "siinf_casalindap_ec")
+//@Table(name = "Fac_Pedidos_Deta", schema = "dbo", catalog = "siting_casalindap_ec")
 @Table(name = "Fac_Pedidos_Deta")
-public class FacPedidosDeta implements Serializable {
+public class FacPedidosDeta  {
 
 @Id
     @Column(name = "C_Empresa", nullable = false)
     private Integer cEmpresa;
-
-
     @Column(name = "N_Orden_Pedido", nullable = false, length = 15)
     private String nOrdenPedido;
+
     @Basic
     @Column(name = "T_Elemento", nullable = false, length = 3)
     private String tElemento;
@@ -186,6 +186,8 @@ public class FacPedidosDeta implements Serializable {
     @Basic
     @Column(name = "V_Pvp", nullable = true, precision = 0)
     private Double vPvp;
+
+
 
 /*
     @Override

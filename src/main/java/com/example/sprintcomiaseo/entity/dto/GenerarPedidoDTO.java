@@ -23,7 +23,7 @@ public class GenerarPedidoDTO {
         this.facPedidosEnca = facPedidosEnca;
     }
 
-    public Iterable<FacPedidosDeta> getFacPedidosDetas() {
+    public Iterable<FacPedidosDeta> getFacPedidosDeta() {
         return facPedidosDetas;
     }
 
