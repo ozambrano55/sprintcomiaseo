@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/pedido")
-public class PedidoController {/*
+public class PedidoController {
     private final PedidoService service;
 
     public PedidoController(PedidoService service) {
@@ -23,7 +23,7 @@ public class PedidoController {/*
     public GenericResponse<List<PedidoConDetallesDTO>> devolverMisComprasConDetalle(@PathVariable String idCli){
         return this.service.devolverMisCompras(idCli);
     }
-
+/*
     //GUARDAR PEDIDO
     @PostMapping
     public GenericResponse guardarPedido(@RequestBody GenerarPedidoDTO dto){
@@ -39,6 +39,5 @@ public class PedidoController {/*
     public ResponseEntity<Resource> exportInvoice(@RequestParam int idCli, @RequestParam int idOrden){
         return this.service.exportInvoice(idCli, idOrden);
     }
-
-     */
+*/
 }

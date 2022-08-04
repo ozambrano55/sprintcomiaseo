@@ -8,18 +8,20 @@ import org.springframework.stereotype.Repository;
 
 import java.io.Serializable;
 
-/*
-public interface DetallePedidoRepository extends CrudRepository<FacPedidosDeta, String> {
-    @Query(value = "SELECT DP FROM FacPedidosDeta DP WHERE DP.facPedidosEnca.nOrdenPedido=:idP" )
+
+public interface DetallePedidoRepository extends CrudRepository<FacPedidosDeta, Integer> {
+    @Query(value = "SELECT DP FROM FacPedidosDeta DP WHERE DP.nOrdenPedido=:idP" )
     Iterable<FacPedidosDeta> findByPedido(String idP);
-    @Query(value = "SELECT DP.vlrTotal AS Total FROM Fac_Pedidos_Deta dp inner JOIN Fac_Pedidos_Enca p \n"
+    @Query(value = "SELECT sum(DP.vlr_Total) AS Total FROM Fac_Pedidos_Deta dp inner JOIN Fac_Pedidos_Enca p \n"
             + "ON p.N_Orden_Pedido = dp.N_Orden_Pedido\n"
-            + "WHERE p.cCodCliente =:idCli", nativeQuery = true)
+            + "WHERE p.c_Cod_Cliente =:idCli", nativeQuery = true)
     Double totalByIdCustomer(String idCli);
 
 }
 
- */
+/*
 @Repository ("detallePedidoRepository")
 public interface DetallePedidoRepository extends JpaRepository<FacPedidosDeta, Serializable> {
 }
+
+ */
